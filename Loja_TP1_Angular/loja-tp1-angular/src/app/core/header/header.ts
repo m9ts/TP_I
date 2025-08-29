@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-header', // <app-header>
@@ -7,9 +7,12 @@ import { Component } from '@angular/core';
   styleUrl: './header.css'
 })
 export class Header {
-  titulo = 'O site dos gigantes!';
-  exibirSobre(nome: string): void {
-    alert(`Olá, meu ${nome}!`); // Interpolação: inserção de valores dinâmicos em strings ou expressões
-  }
+  tituloLoja = input.required<string>(); // <app-header [tituloLoja]="'Titulo'"> </app-header>
 
+  textoSobre = output<string>();
+
+  enviarSobre(): void {
+    this.textoSobre.emit('Técnicas de Programação I - Desenvolvido por Mateus Gois Silva'); // O valor deve ser do mesmo tipo que o declarado em output<>
+    
+  }
 }
