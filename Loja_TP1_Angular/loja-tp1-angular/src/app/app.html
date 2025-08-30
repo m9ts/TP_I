@@ -1,11 +1,11 @@
 <!-- Usando o componente !-->
 <app-header [tituloLoja]="'Loja CRVG ✠'" (textoSobre)="receberSobre($event)"></app-header> <!--Exemplo de signal - input | Componente pai-->
 <div class = "container">
-  <h3>Angular - Aula 02</h3>
+  <!--h3>Angular - Aula 02</h3>
   <span>{{ sobre ?? ''}}</span> <!--Operador de coalescência nula (??): verifica se o valor à sua esquerda é nulo; se for, retorna o valor à sua direita, caso contrário, retorna o valor à esquerda-->
-  <app-quantidade-controle [(contador)]="qtd"></app-quantidade-controle> <br><br>
-  <span>Quantidade: {{ qtd() }}</span>
-  
+  <!--app-quantidade-controle [(contador)]="qtd"></app-quantidade-controle> <br><br>
+  <span>Quantidade: {{ qtd() }}</span!-->
+  <lista-produtos></lista-produtos>
 </div>
 <app-banner></app-banner>
 <rodape></rodape>
