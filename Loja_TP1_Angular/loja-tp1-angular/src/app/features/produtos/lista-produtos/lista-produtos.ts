@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 import { Produto } from '../../../model/produto';
 import { CardProduto } from "../card-produto/card-produto";
 
@@ -6,7 +6,7 @@ import { CardProduto } from "../card-produto/card-produto";
   selector: 'lista-produtos',
   imports: [CardProduto],
   templateUrl: './lista-produtos.html',
-  styleUrls: ['./lista-produtos.css'] 
+  styleUrls: ['./lista-produtos.css']
 })
 export class ListaProdutos {
   produtos: Produto[] = [
@@ -17,7 +17,8 @@ export class ListaProdutos {
       preco: 218.49,
       imageURl: 'images/camisa_vasco_kombat.png',
       promo: true,
-      nota: 0 
+      nota: 0,
+      estado: 'usado'
     },
     {
       id: 2,
@@ -26,7 +27,8 @@ export class ListaProdutos {
       preco: 208.99,
       imageURl: 'images/camisa_vascoIII.png',
       promo: true,
-      nota: 0 
+      nota: 0,
+      estado: 'novo'
     },
     {
       id: 3,
@@ -34,7 +36,8 @@ export class ListaProdutos {
       descricao: 'Cor: Preta e branca',
       preco: 329.90,
       imageURl: 'images/camisa_vasco_polo.png',
-      nota: 0 
+      nota: 0,
+      estado: 'esgotado'
     },
     {
       id: 4,
@@ -42,11 +45,20 @@ export class ListaProdutos {
       descricao: 'Cor: Preta',
       preco: 129.90,
       imageURl: 'images/regata_vasco.png',
-      nota: 0 
+      nota: 0,
+      estado: 'novo'
     },
   ]
 
-  onAddProduct(produto: {id: number, quantity: number}) {
+  apenasPromo = signal(false);
+
+  prodExibidos = computed(() => this.apenasPromo() ? this.produtos.filter(p => p.promo) : this.produtos);
+
+  alternarPromo() {
+    this.apenasPromo.update(p => !p); // Função para alternar seção de promoções
+  }
+
+  onAddProduct(produto: { id: number, quantity: number }) {
     alert(`Produto ${produto.id}, ${produto.quantity} unidades`);
   }
 

@@ -13,16 +13,16 @@ import { AvaliacaoProduto } from "../avaliacao-produto/avaliacao-produto";
 export class CardProduto {
   produto = input.required<Produto>(); // input.required "força" a inserção
 
-  qtde = signal<number>(1);
+  qtde = signal<number>(0);
 
-  add = output<({id: number, quantity: number})>();
+  add = output<({ id: number, quantity: number })>();
   view = output<number>();
 
-  onAdd(){
-    this.add.emit({id: this.produto().id, quantity: this.qtde()});
+  onAdd() {
+    this.add.emit({ id: this.produto().id, quantity: this.qtde() });
   }
 
-  onView(){
+  onView() {
     this.view.emit(this.produto().id);
   }
 
