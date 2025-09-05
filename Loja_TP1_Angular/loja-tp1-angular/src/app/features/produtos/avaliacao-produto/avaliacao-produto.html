@@ -1,0 +1,10 @@
+<div>
+  <span *ngFor="let estrela of [1,2,3,4,5]">
+    <i 
+      class="icone-estrela" 
+      [ngClass]="estrela <= nota ? 'estrela-cheia' : 'estrela-vazia'" 
+      (click)="avaliar(estrela)"
+      style="cursor:pointer; color: gold;">
+    </i>
+  </span>
+</div>

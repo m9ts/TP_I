@@ -4,6 +4,8 @@
         <h3 class="titulo">{{ produto().nome }}</h3>
         <p class = "desc">{{ produto().descricao }}</p>
 
+        <app-avaliacao-produto [(nota)]="produto().nota"></app-avaliacao-produto>
+
         <div class="linhapreco">
             <span class="preco"> {{ produto().preco | currency: 'BRL': 'symbol': '1.2-2'}}</span>
             <app-quantidade-controle [(contador)]="qtde"></app-quantidade-controle>

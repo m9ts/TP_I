@@ -1,10 +1,9 @@
 export interface Produto {
     id: number;
     nome: string;
-    preco: number;
     descricao: string;
-    imageURl?: string;
+    preco: number;
+    imageURl: string;
     promo?: boolean;
+    nota: number;
 }
-
-

@@ -2,12 +2,13 @@ import { Component, input, model, output, signal } from '@angular/core';
 import { Produto } from '../../../model/produto';
 import { QuantidadeControle } from "../../../shared/quantidade-controle/quantidade-controle";
 import { CurrencyPipe } from '@angular/common';
+import { AvaliacaoProduto } from "../avaliacao-produto/avaliacao-produto";
 
 @Component({
   selector: 'app-card-produto',
-  imports: [QuantidadeControle, CurrencyPipe],
+  imports: [QuantidadeControle, CurrencyPipe, AvaliacaoProduto],
   templateUrl: './card-produto.html',
-  styleUrl: './card-produto.css'
+  styleUrls: ['./card-produto.css']
 })
 export class CardProduto {
   produto = input.required<Produto>(); // input.required "força" a inserção

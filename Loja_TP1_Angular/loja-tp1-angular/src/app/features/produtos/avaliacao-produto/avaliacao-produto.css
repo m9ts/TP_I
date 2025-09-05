@@ -1,0 +1,15 @@
+.icone-estrela {
+  font-family: 'FontAwesome';
+  font-size: 24px;
+  margin-right: 4px;
+  transition: color 0.2s;
+}
+.estrela-cheia:before {
+  content: '\f005';
+}
+.estrela-vazia:before {
+  content: '\f006'; 
+}
+.icone-estrela:hover {
+  color: orange;
+}

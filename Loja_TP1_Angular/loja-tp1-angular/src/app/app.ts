@@ -11,14 +11,16 @@ import { ListaProdutos } from "./features/produtos/lista-produtos/lista-produtos
   selector: 'app-root',
   imports: [Header, Footer, Banner, ListaProdutos],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css'] // Corrigido aqui
 })
 export class App {
   prod: Produto = {
     id: 1,
     nome: 'Produto 1',
     descricao: 'Descrição do Produto 1',
-    preco: 179.90
+    preco: 179.90,
+    nota: 0,
+    imageURl: ''
   }
   sobre? : string; // sobre pode ser uma string ou undefined -> Union type
 
@@ -26,5 +28,4 @@ export class App {
   receberSobre(texto: string) {
     this.sobre = texto;
   }
-
 }
