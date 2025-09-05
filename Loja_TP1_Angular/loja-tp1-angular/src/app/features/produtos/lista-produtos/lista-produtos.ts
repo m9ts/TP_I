@@ -49,4 +49,8 @@ export class ListaProdutos {
   onAddProduct(produto: {id: number, quantity: number}) {
     alert(`Produto ${produto.id}, ${produto.quantity} unidades`);
   }
+
+  onViewProduct(id: number) {
+    alert(`Id do produto: ${id}`);
+  }
 }
