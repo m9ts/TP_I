@@ -7,10 +7,10 @@
 
             @switch(produto().estado) {
                 @case('novo'){
-                    <span class="selo novo">Novo</span>
+                    <span class="selo novo">Produto novo</span>
                 }
                 @case('esgotado'){
-                    <span class="selo esgotado">Esgotado!</span>
+                    <span class="selo esgotado">Produto esgotado!</span>
                 }
             }
             @if(produto().promo){
