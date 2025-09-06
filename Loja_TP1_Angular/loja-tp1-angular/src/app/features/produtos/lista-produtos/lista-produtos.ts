@@ -12,7 +12,7 @@ export class ListaProdutos {
   produtos: Produto[] = [
     {
       id: 1,
-      nome: 'Camisa Vasco III 24/25 s/n° Kombat Jogador Kappa Masculina',
+      nome: 'Camisa Vasco III 24/25 s/n°',
       descricao: 'Cor: Bege',
       preco: 218.49,
       imageURl: 'images/camisa_vasco_kombat.png',
@@ -22,7 +22,7 @@ export class ListaProdutos {
     },
     {
       id: 2,
-      nome: 'Camisa Vasco III 23/24 s/n° Jogador Kappa Masculina',
+      nome: 'Camisa Vasco III 23/24 s/n°',
       descricao: 'Cor: Preta',
       preco: 208.99,
       imageURl: 'images/camisa_vascoIII.png',
@@ -32,7 +32,7 @@ export class ListaProdutos {
     },
     {
       id: 3,
-      nome: 'Camisa Vasco III 23/24 s/n° Jogador Kappa Masculina',
+      nome: 'Camisa Vasco III 23/24 s/n°',
       descricao: 'Cor: Preta e branca',
       preco: 329.90,
       imageURl: 'images/camisa_vasco_polo.png',
