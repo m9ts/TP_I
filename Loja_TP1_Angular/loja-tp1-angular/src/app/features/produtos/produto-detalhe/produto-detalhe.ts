@@ -2,10 +2,12 @@ import { Component, inject, signal } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProdutoService } from '../services/produto.service';
 import { Produto } from '../../../model/produto';
+import { DescontoPipe } from "../../../shared/pipes/desconto-pipe";
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-produto-detalhe',
-  imports: [],
+  imports: [DescontoPipe, CurrencyPipe],
   templateUrl: './produto-detalhe.html',
   styleUrl: './produto-detalhe.css'
 })
