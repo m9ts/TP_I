@@ -19,7 +19,7 @@ export class ProdutoService {
         imageURl: 'images/camisa_vasco_kombat.png',
         promo: true,
         nota: 0,
-        estado: 'usado'
+        estado: 'novo'
       },
       {
         id: 2,
@@ -53,7 +53,7 @@ export class ProdutoService {
 
     listar(): Observable <Produto[]> {
       this.logger.info('[ProdutoService] - Listando produtos');
-      return of(this.listaMock).pipe(delay(2000)); // Transformando a lista em Observable com of
+      return of(this.listaMock).pipe(delay(500)); // Transformando a lista em Observable com of
     }
 
     getById(id: number): Observable<Produto | undefined> {

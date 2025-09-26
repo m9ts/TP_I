@@ -10,5 +10,6 @@ export const routes: Routes = [
     {path: 'produtos/:id', component: ProdutoDetalhe},
     {path: 'sobre', component: Sobre},
     // Em caso de não encontrar uma rota disponível, ele redireciona para a página Home (funciona como um default)
-    {path: '**', redirectTo: ''},
+    {path: '**', redirectTo: '/404'},
+    //{path: '404', component: paginaInexistente},
 ];

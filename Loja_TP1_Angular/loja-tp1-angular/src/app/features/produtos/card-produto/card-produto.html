@@ -9,6 +9,10 @@
                 @case('novo'){
                     <span class="selo novo">Produto novo</span>
                 }
+                @case('usado'){
+                    <span class="selo usado">Produto usado</span>
+                }
+
                 @case('esgotado'){
                     <span class="selo esgotado">Produto esgotado!</span>
                 }
@@ -49,7 +53,7 @@
 
         <div class="acoes">
             <button class="btn ghost" (click)="onView()">Detalhes</button>
-            @if(qtde() > 0 && produto().estado != "esgotado"){
+            @if(produto().estado != "esgotado" && qtde() > 0){
                 <button class="btn primary" (click)="onAdd()">Adicionar</button>
             }
         </div>

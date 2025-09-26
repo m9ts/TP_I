@@ -10,7 +10,7 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [Header, Footer, Banner, RouterOutlet, ListaProdutos],
+  imports: [Header, Footer, Banner, RouterOutlet],
   templateUrl: './app.html',
   styleUrls: ['./app.css'] // Corrigido aqui
 })
