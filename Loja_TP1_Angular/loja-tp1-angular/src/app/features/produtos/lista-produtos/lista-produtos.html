@@ -1,20 +1,26 @@
 <section class="catalogo">
-    <header class="barradetarefas">
-        <h2>Catálogo</h2>
-        <button class="btn sopromo" [class.active]="apenasPromo()" (click)="alternarPromo()">
-            @if(apenasPromo()){Mostrar todos}
-            @else {Somente promoções}
-        </button>
-    </header>    
-        <div class="grid">
-            @for(p of prodExibidos(); track p.id) {
-            <app-card-produto [produto]="p" 
-                                (add)="onAddProduct($event)" 
-                                (view)="onViewProduct($event)">
-            </app-card-produto>
-        } @empty {
-            <!-- Exibido automaticamente quando prodExibidos() estiver vazio -->
-            <p class = "vazio">Nenhum produto encontrado para o filtro atual.</p> 
-        }
+  <header class="barradetarefas">
+    <h2>Catálogo</h2>
+    <button class="btn sopromo" [class.active]="apenasPromo()" (click)="alternarPromo()">
+      @if(apenasPromo()) { Mostrar todos }
+      @else { Somente promoções }
+    </button>
+  </header>
+
+  <!-- trecho da lista de produtos -->
+  @if (loading()) {
+    <p>Carregando produtos...</p>
+  } @else if (prodExibidos().length === 0) {
+    <p class="vazio">Nenhum produto encontrado para o filtro atual.</p>
+  } @else {
+    <div class="grid">
+      @for (p of prodExibidos(); track p.id) {
+        <app-card-produto
+          [produto]="p"
+          (view)="onViewProduct($event)"
+          (add)="onAddProduct($event)">
+        </app-card-produto>
+      }
     </div>
+  }
 </section>

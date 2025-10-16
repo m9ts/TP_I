@@ -21,7 +21,7 @@ export class App {
     descricao: 'Descrição do Produto 1',
     preco: 179.90,
     nota: 0,
-    imageURl: ''
+    imageUrl: ''
   }
   sobre? : string; // sobre pode ser uma string ou undefined -> Union type
 

@@ -1,4 +1,4 @@
-import { Component, input, model, output, signal } from '@angular/core';
+import { Component, Input, Output, EventEmitter, signal } from '@angular/core';
 import { Produto } from '../../../model/produto';
 import { QuantidadeControle } from "../../../shared/quantidade-controle/quantidade-controle";
 import { CurrencyPipe } from '@angular/common';
@@ -12,19 +12,23 @@ import { DescontoPipe } from '../../../shared/pipes/desconto-pipe';
   styleUrls: ['./card-produto.css']
 })
 export class CardProduto {
-  produto = input.required<Produto>(); // input.required "força" a inserção
+  // Input obrigatório
+  @Input({ required: true }) produto!: Produto;
 
+  // Signal para quantidade
   qtde = signal<number>(0);
 
-  add = output<({ id: number, quantity: number })>();
-  view = output<number>();
+  // Outputs
+  @Output() add = new EventEmitter<{ id: number, quantity: number }>();
+  @Output() view = new EventEmitter<number>();
 
+  // Adicionar produto
   onAdd() {
-    this.add.emit({ id: this.produto().id, quantity: this.qtde() });
+    this.add.emit({ id: this.produto.id, quantity: this.qtde() });
   }
 
+  // Ver detalhes do produto
   onView() {
-    this.view.emit(this.produto().id);
+    this.view.emit(this.produto.id);
   }
-
 }
