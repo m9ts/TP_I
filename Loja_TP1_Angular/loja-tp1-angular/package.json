@@ -348,10 +348,11 @@
     "zone.js": "^0.15.1"
   },
   "devDependencies": {
-    "@angular/cli": "^20.3.8",
-    "@angular/compiler-cli": "^20.3.9",
-    "typescript": "~5.8.2"
-  },
+  "@angular/cli": "^20.3.8",
+  "@angular/compiler-cli": "^20.3.9",
+  "@angular-devkit/build-angular": "^20.3.8",
+  "typescript": "~5.8.2"
+},
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
